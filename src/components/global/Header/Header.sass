@@ -1,0 +1,129 @@
+
+.header-menu-1
+	visibility: hidden
+	opacity: 0
+	transform: translateY(-10px)
+	transition: all 0.3s ease-in-out
+	position: absolute
+	width: 200px
+	background-color: #f97316 // Màu cam
+	display: flex
+	flex-direction: column
+	gap: 12px
+	z-index: 10
+	padding: 8px
+.header-menu-1 > li > a 
+	@apply p-2
+.about
+	position: relative
+	&:hover
+		.header-menu-1
+			@apply opacity-100 translate-y-0 visible
+.search-bar-container
+	position: absolute
+	top: 100%
+	opacity: 0
+	right: 0
+	padding: 1.5rem 2.5rem
+	display: flex
+	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))
+	background-size: cover
+	backdrop-filter: blur(4px) 
+	height: 100vh
+	width: 100%
+	align-items: center
+	flex-direction: column
+	z-index: 1001
+	// clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)	
+	opacity: 0
+	transition:  0.5s ease-in-out, opacity 0.3s ease-in-out 0.4s, visibility 0s 1s
+	// transition: clip-path 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out
+	visibility: hidden
+	pointer-events: none
+
+	
+.search-bar-container.active
+	opacity: 1
+
+	visibility: visible
+	transition:  0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0s
+
+@media screen and (max-width: 1023.98px)
+	.header-nav-mobile
+		position: absolute
+		top: 100%
+		right: -100%
+		bottom: 0
+		box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
+		background-color: #4ade80
+		width: 100vw
+		display: flex
+		max-width: 28rem
+		height: 100dvh
+		z-index: 9999
+		flex-direction: column
+		gap: 10px
+		align-items: stretch
+		transition: right 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-in-out 0.2s
+		opacity: 0
+		&.open
+			right: 0
+			opacity: 1
+		ul
+			@apply flex flex-col items-stretch gap-2
+			li
+				@apply py-6 border-b border-b-slate-400
+				a
+					@apply text-black text-lg font-medium rem:leading-[26px] pl-2
+@media screen and (max-width: 767.98px)
+	.header-nav-mobile
+		position: absolute
+		top: 100%
+		left: -100%
+		box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
+		background-color: #4ade80
+		width: 100vw
+		display: flex
+		max-width: 20rem
+		height: 100dvh
+		z-index: 9999
+		flex-direction: column
+		gap: 10px
+		align-items: stretch
+		transition: all 0.5s ease
+		&.open
+			left: 0
+			display: block
+
+		ul
+			@apply flex flex-col items-stretch gap-2
+			li
+				@apply py-6 border-b border-b-slate-400
+				a
+					@apply text-black text-lg font-medium rem:leading-[26px] pl-2
+	.overlay 
+		position: fixed
+		top: 5.70rem
+		left: 0
+		width: 100vw
+		height: 100vh
+		background-color: rgba(0, 0, 0, 0.5) 
+		z-index: -9998 
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.2s linear
+	.overlay.is-show 
+		opacity: 1
+		visibility: visible
+	.header-search-form
+		position: absolute
+		top: 110%
+		right: -110%
+		width: 200px
+		background-color: black
+		color: #fff
+		overflow: hidden
+		transition: all 0.5s ease
+		&.active
+			right: 1rem
