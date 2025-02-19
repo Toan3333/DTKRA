@@ -1,1 +1,85 @@
-header
+header.header
+	form.search-bar-container(action="", class="")
+		.searchbox(class="w-full relative cursor-pointer") 
+			input#search-btn(type="text", class="searchinput", placeholder="Tìm kiếm...", class="px-4 py-2 rounded bg-Neutral/White shadow-lg w-full cursor-pointer")
+			.search-icon(class="absolute top-2/4 -translate-y-2/4 right-0 pr-5 text-Primary/Blue")
+				i.fa-sharp.fa-regular.fa-magnifying-glass
+	.container 
+		.header-main(class="flex items-center justify-between")
+			.header-search-mb(class="lg:hidden items-center gap-base flex") 
+				.header-language(class="flex items-center gap-3") 
+					.header-icon-global(class="text-2xl text-Neutral-950 font-normal") 
+						img(src="./img/VN.svg", alt="")
+					.header-language-list(class="flex items-center gap-1")
+						a(href="#" class="title-18 font-semibold") EN
+						i.fa-solid.fa-caret-down 
+				.header-search-mobile(class="text-2xl text-Neutral-950 font-normal cursor-pointer w-6 h-6 flex items-center")
+					i.fa-regular.fa-magnifying-glass 
+			.header-logo-left(class="absolute left-1/2 -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-0 ") 
+				a(href="#" class="lg:rem:w-[69px] lg:rem:h-[86px] w-full h-[60px] block")
+					img(src="./img/logo.png", alt="" class="w-full h-full")
+			.header-bar-mobile(class="lg:hidden block") 
+				.header-bar 
+					i.fa-solid.fa-bars 
+			.header-menu(class="lg:block hidden") 
+				.header-menu-top(class="flex items-center justify-between pt-2 pb-3")
+					.col-left 
+						.item 
+							.icon 
+								i.fa-regular.fa-envelope
+							a(href="#") dautiengkratie@yahoo.com.vn 
+						.item 
+							.icon 
+								i.fa-regular.fa-phone
+							a(href="#") 096 852 1252
+					.col-right 
+						.header-language(class="flex items-center gap-3") 
+							.header-language-icon 
+								img(src="./img/VN.svg", alt="")
+							.header-language-dropdowm(class="flex items-center gap-3 text-Neutral-900")  
+								span Việt Nam
+								i(class="font-black").fa-solid.fa-caret-down
+				ul.header-nav
+					li 
+						a.active(href="#") 
+							i.fa-regular.fa-house
+					li 
+						a(href="#") Giới thiệu
+					li 
+						a(href="#") Sản phẩm
+					li 
+						a(href="#") Công bố thông tin 
+					li 
+						a(href="#") Tin tức
+					li 
+						a(href="#") Liên hệ
+					li.header-search
+						a(href="#") 
+							i.fa-regular.fa-magnifying-glass
+			.header-logo-right(class="lg:block hidden")  
+				a(href="#" class="rem:w-[69px] rem:h-[86px] block")
+					img(src="./img/logo.png", alt="" class="w-full h-full") 
+	.header-nav-mobile(class="block lg:hidden") 
+		ul(class="flex items-center text-white")
+			li
+				a(href="./home.html") Trang chủ
+			li
+				a(href="./credo.html") Giới thiệu
+			li
+				a(href="./about.html") Sản phẩm
+			li
+				a(href="./serviceList.html") Công bố thông tin
+			li
+				a(href="./newList.html") Tin tức
+			li
+				a(href="./newList.html") Liên hệ
+		.header-bottom-mobile 
+			.item 
+				.icon 
+					i.fa-regular.fa-envelope
+				a(href="#") dautiengkratie@yahoo.com.vn 
+			.item 
+				.icon 
+					i.fa-regular.fa-phone
+				a(href="#") 096 852 1252
+			

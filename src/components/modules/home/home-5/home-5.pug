@@ -1,0 +1,23 @@
+section.home-5(class="section-py bg-Neutral-50 relative")
+	.container 
+		.heading(class="flex flex-col items-center text-center mb-base") 
+			h2(class="title-40 mb-5") Sản phẩm
+			.desc(class="text-center lg:rem:w-[700px] w-full mx-auto text-lg text-Primary-Primary_01 font-bold") 
+				p Chủng loại sản phẩm của Công ty bao gồm: SVR 10, SVR 20, SVR CV50, SVR CV60. Đặc biệt sản phẩm cao su SVR 10 trọng lớn trong cơ cấu sản phẩm của Công ty. 
+		.swiper.home-5-swiper 
+			.swiper-wrapper
+				-for(let i = 0; i < 8; i++)
+					.swiper-slide
+						.home-5-item
+							.image 
+								a(href="#" class="img-ratio ratio:pt-[320_320] zoom-img rem:rounded-[32px]")
+									img(src="./img/1.jpg", alt="")
+							.content(class="mt-5 text-center") 
+								h3(class="text-xl font-bold text-Neutral-950 hover:text-Primary-Primary_01") 
+									a(href="#") Mủ SVR10 
+	.home-1-btn(class="lg:flex items-center justify-between gap-5 absolute  z-0 top-2/4 -translate-y-2/4 w-full rem:px-[156px] mt-15 hidden")
+		.btn.btn-prev.btn-sw-1
+		.btn.btn-next.btn-sw-1
+	.home-5-btn-mobile(class="flex-center gap-3 mt-base lg:hidden flex")
+		.btn.btn-prev.btn-sw-1
+		.btn.btn-next.btn-sw-1

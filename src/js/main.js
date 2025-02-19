@@ -10,14 +10,13 @@ import {
 } from "./helper";
 import { header } from "./header";
 import { swiperInit } from "./swiper";
-import { showMenu } from "./menu";
+import { showMenu } from "./headerMenu";
 $(document).ready(function () {
 	setBackgroundElement();
 	header.init();
 	swiperInit();
 	showMenu();
 	// countUpInit();
-	console.log("ok");
 });
 
 // fancyfox popup

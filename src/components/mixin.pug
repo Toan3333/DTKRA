@@ -1,80 +1,39 @@
-//- button animation icon di chuyển sang phải
-mixin button() 
-	.button(class="mt-10")
-		a(href="#" class="btn-lined")
-			span xem them 
-			span(class="icon") 
-				i.fa-solid.fa-arrow-right
-				i.fa-solid.fa-arrow-right
-//- popup dùng fancyfox
-mixin popopForm()
-	#popup-form.popup(style="display: none;" data-fancybox-modal)
-		.popup-content(class="bg-white rem:max-w-[915px] w-full shadow-lg relative z-50 max-lg:max-w-[700px] max-md:max-w-[320px] p-20 max-lg:p-5")
-			h1(class="text-5xl text-Neutral-Black font-light mb-10") Contact recruitment
-			p(class="text mb-10") We are always on the lookout for committed and qualified employees to enrich our team. We currently have vacancies in the following areas:
-			form(action="")
-				.form-group(class="grid grid-cols-12 gap-5 mb-5") 
-					.form-group-item(class="col-span-6")
-						input(type="text" name="name" placeholder="Name")
-					.form-group-item(class="col-span-6")
-						input(type="text" name="name" placeholder="Name")
-				.form-group(class="grid grid-cols-12 gap-5") 
-					.form-group-item(class="col-span-6")
-						input(type="text" name="name" placeholder="Name")
-					.form-group-item(class="col-span-6")
-						select#career-detail-3-box-item-select(
-							name=""
-							class="w-full appearance-none bg-white pr-12 focus:border-Primary-1 cursor-pointer"
-						) 
-							option(value="") All Jobs
-							option(value="") All Jobs
-							option(value="") All Jobs
-						.select-icon(class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none")
-							i.fa-solid.fa-chevron-down(class="text-Neutral-950")
-				.file(class="relative mb-5")
-					.file-input-wrapper(class="relative")
-						input(
-							type="text" 
-							placeholder="*Attached file (rar, zip, doc, docx, pdf, <1MB)"
-							class="w-full px-5 py-3 border border-stroke-E0 focus:border-Primary-1 outline-none"
-							readonly
-						)
-						.file-dowload(class="absolute right-0 top-0 h-full")
-							label(
-								class="h-full px-5 py-3 bg-Neutral-400 text-Neutral-White cursor-pointer flex items-center gap-2 justify-center hover:bg-Primary-700 transition-300"
-							) Tải file
-								
-								i.fa-solid.fa-download(class="text-base")
-								input(
-									type="file" 
-									name="file"
-									class="hidden"
-									accept=".rar,.zip,.doc,.docx,.pdf"
-								)
-				.textarea 	
-					input(type="text" name="message" placeholder="Message")
-				.btn-submit(class="mt-10")
-					+buttonPrimary("Send")
-
-//- click thì active tab dùng thư viện tabslet
-mixin tab()
-	.wrap(data-toggle="tabslet")
-		ul.tabslet-tab 
-			li.active 
-				a(href="#tab1") tab1 
+mixin subscribeForm()
+	.subscribe
+		.subscribefrm
+			input.subscribeemail(type="text", placeholder="Nhập email của bạn...")
+			button.subscribebutton Gửi
+mixin PugImg(url="./img/1.jpg")
+	img(data-src=url, alt="", class="lozad " + attributes.class)
+mixin btnViewAll(text="Xem thêm")
+	a(href="" x-link class='btn-primary-2 btn ' + attributes.class)
+		span=text
+		img(src=imgButton, alt="", class="w-5 h-5 svg")
+mixin HeaderLanguageVertical()
+	ul 
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+		ul 
 			li 
-				a(href="#tab2") tab2 
-		.tabslet-content.active#tab1
-			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolor quas illo tempore non exercitationem cumque consectetur rem. Quae totam sapiente iste saepe consequuntur laboriosam ducimus fugiat praesentium esse sequi!
-		.tabslet-content#tab2 
-			p ok
-mixin breadcrumb(links, current)
-	.breadcrumb
-		.container
-			p(class="flex items-center rem:gap-[10px]")
-				each link in links
-					a(href=link.href class="text-[#77787B]")= link.text
-					if index != links.length - 1
-						span.separator 
-							i(class="text-[#77787B]").fa-solid.fa-angle-right
-				span.last(class="text-Primary-Red-2")= current
+				a(href="") 
+					span EN
+mixin HeaderLanguageHorizontal()
+	ul 
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+mixin BtnPrimary(text="")
+	a(href="", class='btn-primary btn ' + attributes.class)
+		span=text
+mixin btnPrimary()
+	.btn-btn-primary(class="inline-flex items-center group")
+		button(class="btn-primary py-3 px-5 border border-Neutral-900 rem:rounded-l-[50px] group-hover:border-Primary-Primary_01 rem:h-[50px] group-hover:bg-Primary-Primary_01 group-hover:border-r group-hover:border-r-Neutral-White transition-all ease-linear")
+			a(href="#" class="text-lg font-semibold text-Neutral-900 group-hover:text-Neutral-White") Xem thêm 
+		a(href="#" class="btn-lined text-lg font-normal flex items-center gap-2 rem:rounded-r-[50px] group-hover:bg-Primary-Primary_01")
+			span(class="icon to-right") 
+				i.fa-regular.fa-arrow-right
+				i.fa-regular.fa-arrow-right

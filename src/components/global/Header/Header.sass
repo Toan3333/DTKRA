@@ -1,129 +1,96 @@
-
-.header-menu-1
-	visibility: hidden
-	opacity: 0
-	transform: translateY(-10px)
-	transition: all 0.3s ease-in-out
-	position: absolute
-	width: 200px
-	background-color: #f97316 // Màu cam
-	display: flex
-	flex-direction: column
-	gap: 12px
-	z-index: 10
-	padding: 8px
-.header-menu-1 > li > a 
-	@apply p-2
-.about
-	position: relative
-	&:hover
-		.header-menu-1
-			@apply opacity-100 translate-y-0 visible
-.search-bar-container
-	position: absolute
-	top: 100%
-	opacity: 0
-	right: 0
-	padding: 1.5rem 2.5rem
-	display: flex
-	box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
-	background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))
-	background-size: cover
-	backdrop-filter: blur(4px) 
-	height: 100vh
-	width: 100%
-	align-items: center
-	flex-direction: column
-	z-index: 1001
-	// clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)	
-	opacity: 0
-	transition:  0.5s ease-in-out, opacity 0.3s ease-in-out 0.4s, visibility 0s 1s
-	// transition: clip-path 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out
-	visibility: hidden
-	pointer-events: none
-
-	
-.search-bar-container.active
-	opacity: 1
-
-	visibility: visible
-	transition:  0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0s
-
-@media screen and (max-width: 1023.98px)
-	.header-nav-mobile
+.header
+	@apply shadow-Dropshadow-Light bg-Neutral-White sticky left-0 right-0 z-100 top-0 py-5 lg:py-0
+	.header-search
+		@apply text-2xl text-Neutral-950 font-normal cursor-pointer  hover:text-Primary-Primary_01 inline-flex items-center justify-center w-9 h-9 flex-shrink-0
+	.header-bar
+		@apply w-12 h-12 flex-shrink-0 inline-flex items-center justify-center text-Neutral-White bg-Primary-Primary_01 backdrop-blur-sm text-2xl
+	.header-menu
+		.header-nav
+			@apply  inline-flex items-center rem:py-[10px] px-15 justify-between text-Neutral-White text-lg xl:rem:w-[1160px] lg:rem:w-[950px] bg-Primary-Primary_01 
+			border-radius: 32px 32px 0px 0px
+			li
+				a
+					@apply text-lg font-semibold rem:py-[6px] px-3 rem:rounded-[32px] text-Neutral-White bg-transparent inline-block
+					&.active
+						@apply   bg-Neutral-White text-Primary-Primary_01
+					&:hover
+						@apply text-Primary-Primary_01  bg-Neutral-White
+				&[class*='current']
+					&>a
+						@apply bg-Neutral-White text-Primary-Primary_01
+		.col-left
+			@apply flex items-center rem:gap-[25px]
+			.item
+				@apply flex items-center gap-3
+				a
+					@apply text-Neutral-900 font-normal
+				i
+					@apply text-Primary-Primary_01
+	.search-bar-container
 		position: absolute
 		top: 100%
-		right: -100%
-		bottom: 0
-		box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
-		background-color: #4ade80
-		width: 100vw
+		left: -110%
+		right: 0
+		padding: 1.5rem 15px
 		display: flex
-		max-width: 28rem
-		height: 100dvh
-		z-index: 9999
-		flex-direction: column
-		gap: 10px
-		align-items: stretch
-		transition: right 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-in-out 0.2s
-		opacity: 0
-		&.open
-			right: 0
-			opacity: 1
-		ul
-			@apply flex flex-col items-stretch gap-2
-			li
-				@apply py-6 border-b border-b-slate-400
-				a
-					@apply text-black text-lg font-medium rem:leading-[26px] pl-2
-@media screen and (max-width: 767.98px)
-	.header-nav-mobile
-		position: absolute
-		top: 100%
-		left: -100%
 		box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
-		background-color: #4ade80
-		width: 100vw
-		display: flex
-		max-width: 20rem
-		height: 100dvh
-		z-index: 9999
-		flex-direction: column
-		gap: 10px
-		align-items: stretch
-		transition: all 0.5s ease
-		&.open
-			left: 0
-			display: block
-
-		ul
-			@apply flex flex-col items-stretch gap-2
-			li
-				@apply py-6 border-b border-b-slate-400
-				a
-					@apply text-black text-lg font-medium rem:leading-[26px] pl-2
-	.overlay 
-		position: fixed
-		top: 5.70rem
-		left: 0
-		width: 100vw
+		background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))
+		background-size: cover
+		backdrop-filter: blur(5px) !important
 		height: 100vh
-		background-color: rgba(0, 0, 0, 0.5) 
-		z-index: -9998 
+		width: 100%
+		align-items: center
+		flex-direction: column
+		z-index: 1001
+		// clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)	
 		opacity: 0
+		transition: left 0.5s ease-in-out, opacity 0.3s ease-in-out 0.4s, visibility 0s 1s
+		// transition: clip-path 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out
 		visibility: hidden
-		transition: opacity 0.2s linear
-	.overlay.is-show 
+	.search-bar-container.active
 		opacity: 1
+		left: 0
 		visibility: visible
-	.header-search-form
-		position: absolute
-		top: 110%
-		right: -110%
-		width: 200px
-		background-color: black
-		color: #fff
-		overflow: hidden
-		transition: all 0.5s ease
-		&.active
-			right: 1rem
+		transition: left 0.5s ease-in-out, opacity 0.3s ease-in-out, visibility 0s
+@media (max-width: 1023.98px)
+	.header
+		.header-nav-mobile
+			position: absolute
+			top: 100%
+			left: 0
+			box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05)
+			background-color: #1f7a42
+			width: 100vw
+			height: calc(100dvh - var(--header-height))
+			z-index: 9999
+			display: flex
+			flex-direction: column
+			gap: 10px
+			align-items: stretch
+			opacity: 0 
+			visibility: hidden 
+			transform: translateY(30%)
+			transition: all 0.4s ease
+			@apply duration-500 max-xl:w-full
+			&.open
+				opacity: 1
+				visibility: visible
+				transform: translateY(0)
+			ul
+				@apply flex flex-col items-stretch w-full
+				li
+					a
+						@apply text-Neutral-White py-4 px-[15px] border-b border-b-Neutral-White flex items-center text-[16px]
+				li
+					&[class*='current']
+						&>a
+							@apply text-Neutral-900
+		.header-bottom-mobile
+			.item
+				@apply flex items-center gap-3 px-[15px]
+				a
+					@apply text-Neutral-White font-normal text-[16px]
+				i
+					@apply text-Neutral-White
+					
+			

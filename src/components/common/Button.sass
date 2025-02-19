@@ -1,1 +1,42 @@
+.btn
+	@apply cursor-pointer select-none transition-all duration-300
+	&.btn-sw-1
+		@apply w-12 h-12 rem:p-[10px] flex-center rounded-full hover:bg-Primary-Primary_01 hover:text-Neutral-White
+		background: rgba(0, 0, 0, 0.40)
+		&::before
+			@apply font-awesome text-Neutral-White text-2xl font-normal
+		&.btn-prev
+			&::before
+				content: '\f053'
+		&.btn-next
+			&::before
+				content: '\f054'
+				@apply font-awesome
+.btn-btn-primary
+	&:hover
+		.icon
+			&.to-left > *
+				@apply -translate-x-full
+			&.to-right > *
+				@apply translate-x-0 text-Neutral-White
+		a
+			@apply text-Primary-Primary_01 
+.btn-lined
+	@apply text-lg font-normal flex items-center gap-2 cursor-pointer rem:h-[50px] p-3 border-t border-t-Neutral-900 border-r border-r-Neutral-900 border-b border-b-Neutral-900
+	.icon
+		@apply text-Neutral-900 flex items-center overflow-hidden w-6 h-6
+		> *
+			@apply rem:min-w-[25px] flex-center transition-all duration-500 ease-in-out h-full w-full 
+		&.to-right > *
+			@apply -translate-x-full
 
+	&:hover
+		.icon
+			&.to-right > *
+				@apply translate-x-0 text-Neutral-White
+	
+			&.down
+				> *:first-child
+					@apply -translate-y-full
+				> *:last-child
+					@apply translate-y-0

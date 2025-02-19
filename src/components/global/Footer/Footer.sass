@@ -1,0 +1,42 @@
+.footer
+	.footer-list
+		display: grid
+		grid-template-columns: 4.5fr 2fr 5fr
+		gap: 40px
+	.social-fixed
+		.social-fixed-item
+			&.active
+				@apply bg-Neutral-600
+	.footer-column
+		ul
+			@apply flex flex-col gap-3
+			li
+				@apply font-normal
+				a
+					@apply text-white opacity-75
+					&:hover
+						@apply opacity-100
+		h3
+			@apply text-lg font-bold mb-4
+		.footer-col-right 
+			width: calc( 100% - 16.666666666666668rem - 5.677083333333334rem )
+		.footer-mail
+			.mail
+				@apply flex justify-between items-center border-b border-b-255 pb-4  w-full max-w-md text-Neutral-White
+				.icon
+					@apply flex items-center gap-2 text-xl
+					input
+						@apply w-full bg-transparent outline-none text-white
+						&::placeholder
+							@apply text-white opacity-70
+@media (max-width: 1023.98px)
+	.footer
+		.footer-list
+			@apply grid grid-cols-1 gap-base
+@media (max-width: 767.98px)
+	.footer
+		.footer-list
+			@apply grid grid-cols-1 gap-base
+		.footer-column
+			.footer-col-right 
+				@apply w-full
